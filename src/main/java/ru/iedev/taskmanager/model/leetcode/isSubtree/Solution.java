@@ -8,18 +8,18 @@ public class Solution {
     boolean isSameSubtree = false;
 
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
-        if( root == null) return false;
-        if (isSameSubtree) return true;
+        if(root == null) return false;
+        if(isSameSubtree) return true;
 
         isSameTree = true;
-        isSameSubtree = isSameTree(root.right,subRoot);
-        if (isSameSubtree) return true;
+        if (isSameTree(root,subRoot)) return true;
         isSameTree = true;
-        isSameSubtree = isSameTree(root.left,subRoot);
-        if (isSameSubtree) return true;
+        if (isSameTree(root.right,subRoot)) return true;
+        isSameTree = true;
+        if (isSameTree(root.left,subRoot)) return true;
 
-        isSameSubtree = isSubtree(root.right,subRoot);
-        isSameSubtree = isSubtree(root.left,subRoot);
+        if (isSubtree(root.right,subRoot)) return true;
+        if (isSubtree(root.left,subRoot)) return true;
         return isSameSubtree;
     }
 
