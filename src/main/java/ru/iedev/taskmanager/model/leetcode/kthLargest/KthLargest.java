@@ -11,20 +11,11 @@ public class KthLargest {
 
     public KthLargest(int k, int[] nums) {
         this.k = k;
-        for (int i = 0; i < nums.length; i++) {
-            result.add(nums[i]);
-        }
-        PriorityQueue<Integer> tempResult = new PriorityQueue<>(result);
-        for (int i = 0; i < result.size() - k; i++) {
-            tempResult.poll();
-        }
-        result = tempResult;
-
+        for (int i = 0; i < nums.length; i++) add(nums[i]);
     }
 
     public int add(int val) {
-        if (result.peek() == null) result.add(val);
-        else if (result.size() < k) result.add(val);
+        if (result.size() < k) result.add(val);
         else if (val > result.peek()){
             result.poll();
             result.add(val);
