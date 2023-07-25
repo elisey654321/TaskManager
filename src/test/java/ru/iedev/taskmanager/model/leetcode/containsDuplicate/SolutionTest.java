@@ -1,6 +1,9 @@
 package ru.iedev.taskmanager.model.leetcode.containsDuplicate;
 
+import org.junit.BeforeClass;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -22,4 +25,15 @@ class SolutionTest {
         Assertions.assertEquals(new Solution().containsDuplicate(new int[]{1,1,1,3,3,4,3,2,4,2}), true);
     }
 
+    @BeforeEach
+    void setUp() {
+    }
+
+    @AfterEach
+    void tearDown() {
+    }
+
+    @BeforeClass
+    void setUp_test1() {
+    }
 }

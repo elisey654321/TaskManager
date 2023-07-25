@@ -21,7 +21,7 @@ public class Example1Map {
         System.out.println(collect);
 
         int[] ints = new int[]{5,5,7,3,1,2,4,9,45};
-        Arrays.stream(ints).map(operand -> operand*3).forEach(value -> System.out.println(value));
+        Arrays.stream(ints).map(operand -> operand*3).filter(value -> value%2 == 0).forEach(value -> System.out.println(value));
 
 
 
